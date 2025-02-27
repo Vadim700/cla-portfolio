@@ -15,9 +15,10 @@ export const Grid: React.FC<Props> = ({ className, imgPaths }) => {
           src={image}
           key={image}
           alt="image"
+          priority={false}
           width={200}
           height={200}
-          className="object-contain transition-all hover:-translate-y-3 hover:shadow-2xl"
+          className="object-contain transition-all hover:-translate-y-3 hover:shadow-2xl w-auto"
         />
       ))}
     </div>
