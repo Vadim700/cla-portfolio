@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { WindSong, Rock_3D } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 const windSong = WindSong({
   weight: ['500'],
@@ -26,7 +27,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          'grid grid-rows-[auto_1fr_auto] h-screen p-8 pt-12 bg-[#2d3d51] text-white overflow-hidden',
+          'grid grid-rows-[auto_1fr_auto] h-screen p-8 pb-2 pt-12 bg-[#2d3d51] text-white overflow-hidden',
         )}
       >
         <header
@@ -42,9 +43,19 @@ export default function RootLayout({
         </header>
         {children}
         <footer
-          className={cn(rock3D.className, 'mt-10 text-2xl relative z-[5]')}
+          className={cn(
+            rock3D.className,
+            'flex gap-10 mt-6 text-2xl relative z-[5]',
+          )}
         >
+          <Link href={'/woodhouse'}>WoodHousePage</Link>
           The footer
+          <Link
+            href={'/'}
+            className="ml-auto hover:scale-110 hover:text-red-800 transition-all"
+          >
+            Home
+          </Link>
         </footer>
       </body>
     </html>
