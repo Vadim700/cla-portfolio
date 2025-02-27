@@ -17,7 +17,7 @@ const imgPaths = dataImages.multiPage[0].images;
 
 const WoodHousePage: React.FC<Props> = ({ className }) => {
   return (
-    <div
+    <main
       className={cn(
         'relative z-10 flex justify-between',
         alfaSlabOne.className,
@@ -29,7 +29,7 @@ const WoodHousePage: React.FC<Props> = ({ className }) => {
         className="absolute right-0 bottom-0 max-w-[65%] text-right"
       />
       <Grid imgPaths={imgPaths} className="" />
-    </div>
+    </main>
   );
 };
 
