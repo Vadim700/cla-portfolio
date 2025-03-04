@@ -5,7 +5,12 @@ import { cn } from '@/lib/utils';
 interface Props {
   className?: string;
   title?: string;
-  data: { id: number; name: string; preview: string }[];
+  data: {
+    id: number;
+    name: string;
+    preview: string;
+    link: string;
+  }[];
 }
 
 export const CartsList: React.FC<Props> = ({ className, title, data }) => {
@@ -18,6 +23,7 @@ export const CartsList: React.FC<Props> = ({ className, title, data }) => {
         <CartItem
           key={item.id}
           name={item.name}
+          link={item.link}
           id={item.id}
           preview={item.preview}
         />

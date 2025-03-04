@@ -6,11 +6,13 @@ import Link from 'next/link';
 
 const windSong = WindSong({
   weight: ['500'],
+  subsets: ['latin', 'latin-ext', 'vietnamese'],
 });
 
 const rock3D = Rock_3D({
   weight: '400',
   style: 'normal',
+  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
@@ -27,7 +29,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          'grid grid-rows-[auto_1fr_auto] h-screen p-8 pb-2 pt-12 bg-[#2d3d51] text-white overflow-hidden',
+          'grid grid-rows-[auto_1fr_auto] h-screen p-8 pb-2 pt-12 bg-[#2d3d51] text-white',
         )}
       >
         <header
@@ -36,13 +38,15 @@ export default function RootLayout({
             ' text-6xl/[1.2] mb-10 relative z-[5]',
           )}
         >
-          Bekmansurova Juliya
+          <Link href={'/'} className="hover:text-red-800 transition-all">
+            Bekmansurova Juliya
+          </Link>
           <p className={cn(rock3D.className, 'self-end text-7xl')}>
             UI/UX Designer
           </p>
         </header>
         {children}
-        <footer
+        {/* <footer
           className={cn(
             rock3D.className,
             'flex gap-10 mt-6 text-2xl relative z-[5]',
@@ -50,13 +54,7 @@ export default function RootLayout({
         >
           <Link href={'/woodhouse'}>WoodHousePage</Link>
           The footer
-          <Link
-            href={'/'}
-            className="ml-auto hover:scale-110 hover:text-red-800 transition-all"
-          >
-            Home
-          </Link>
-        </footer>
+        </footer> */}
       </body>
     </html>
   );
