@@ -3,18 +3,21 @@ export const dataImages = {
     {
       id: 1,
       name: 'Dvc',
+      link: 'dvc',
       preview: '/images/landings/3DVC/dvc_0.png',
       images: ['/images/landings/3DVC/dvc_1.png'],
     },
     {
       id: 2,
       name: 'Cool Job',
+      link: 'cooljob',
       preview: '/images/landings/сooljob_home/Cooljob_home_0.png',
       images: ['/images/landings/сooljob_home/Cooljob_home_1.png'],
     },
     {
       id: 3,
       name: 'Alcan',
+      link: 'alcan',
       preview: '/images/landings/Alcan/Alcan_0.png',
       images: [
         '/images/landings/Alcan/Alcan_1_1.png',
@@ -26,22 +29,25 @@ export const dataImages = {
     {
       id: 4,
       name: 'Dances',
+      link: 'dances',
       preview: '/images/landings/dances/dens_0.png',
       images: ['/images/landings/dances/dens_1.png'],
     },
     {
       id: 6,
       name: 'Vershina',
+      link: 'vershina',
       preview: '/images/landings/vershina/vershina_0.png',
       images: ['/images/landings/vershina/vershina_1.png'],
     },
     {
       id: 61,
       name: 'Porolosh',
+      link: 'porolosh',
       preview: '/cla_images/Poroloshka/Poroloshka_0.jpg',
       images: [
-        './cla_images/Poroloshka/Poroloshka_1.jpg',
-        './cla_images/Poroloshka/Poroloshka_1_1.jpg',
+        '/cla_images/Poroloshka/Poroloshka_1.jpg',
+        '/cla_images/Poroloshka/Poroloshka_1_1.jpg',
       ],
     },
   ],
@@ -49,6 +55,7 @@ export const dataImages = {
     {
       id: 7,
       name: 'Woodhouse',
+      link: 'woodhouse',
       preview: '/images/multypage/woodhouse/woodhouse_0.png',
       images: [
         '/images/multypage/woodhouse/woodhouse_1.png',
@@ -65,6 +72,7 @@ export const dataImages = {
     {
       id: 8,
       name: 'Burmash',
+      link: 'burmash',
       preview: '/cla_images/burmash_main/burmash_0.png',
       images: [
         '/cla_images/burmash_main/burmash_1.png',
@@ -83,6 +91,7 @@ export const dataImages = {
     {
       id: 9,
       name: 'Sota',
+      link: 'sota',
       preview: '/cla_images/Sota/Sota_0.png',
       images: [
         '/cla_images/Sota/sota_1.png',
@@ -110,6 +119,7 @@ export const dataImages = {
     {
       id: 10,
       name: 'SPK Group',
+      link: 'spkgroup',
       preview: '/cla_images/SPB_site/СПБ_0.png',
       images: [
         '/cla_images/SPB_site/СПБ_1.png',
@@ -131,6 +141,7 @@ export const dataImages = {
     {
       id: 11,
       name: 'Suventr Avenew',
+      link: 'suvenir',
       preview: '/cla_images/Suvenir/Suvenir_0.png',
       images: [
         '/cla_images/Suvenir/suvenir_1.png',
@@ -153,6 +164,7 @@ export const dataImages = {
     {
       id: 15,
       name: 'Bank App',
+      link: 'bankapp',
       preview: '/images/applications/modil_0.png',
       images: [
         '/images/applications/modil_0_1.png',
@@ -169,8 +181,21 @@ export const dataImages = {
     {
       id: 21,
       name: 'Edu',
+      link: 'edu',
       preview: '/images/banner/Edu/Edu_0.png',
       images: ['/images/banner/Edu/Edu_0.png'],
+    },
+    {
+      id: 22,
+      name: 'Flowers',
+      link: 'flowers',
+      preview: '/images/banner/Flowers/flowers_0.png',
+      images: [
+        '/images/banner/Flowers/flowers_0.png',
+        '/images/banner/Flowers/flowers_0_0.png',
+        '/images/banner/Flowers/flowers_1.png',
+        '/images/banner/Flowers/flowers_1_1.png',
+      ],
     },
   ],
 };

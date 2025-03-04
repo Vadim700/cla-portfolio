@@ -8,6 +8,7 @@ const { landings, multiPage, apps, bunners } = dataImages;
 const alfaSlabOne = Alfa_Slab_One({
   style: 'normal',
   weight: '400',
+  subsets: ['latin', 'latin-ext', 'vietnamese'],
 });
 
 export default function Home() {
@@ -15,7 +16,7 @@ export default function Home() {
     <main
       className={cn(
         alfaSlabOne.className,
-        ' relative z-[5] text-3xl  mb-auto pr-4 overflow-auto max-h-full',
+        ' relative z-[5] text-3xl  mb-auto pr-4',
       )}
     >
       <CartsList title={'Landings'} data={landings} className="mb-10" />
