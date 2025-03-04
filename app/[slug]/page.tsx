@@ -4,20 +4,17 @@ import { cn } from '@/lib/utils';
 import { dataImages } from '@/public/data';
 import { Alfa_Slab_One } from 'next/font/google';
 
-interface Props {
-  className?: string;
-  params: {
-    slug: string;
-  };
-}
-
 const alfaSlabOne = Alfa_Slab_One({
   style: 'normal',
   weight: '400',
   subsets: ['latin', 'latin-ext', 'vietnamese'],
 });
 
-const PageComponent: React.FC<Props> = async ({ className, params }) => {
+export default async function PageComponent({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
 
   const objs = Object.values(dataImages);
@@ -25,9 +22,7 @@ const PageComponent: React.FC<Props> = async ({ className, params }) => {
   const currentPage = objs.flat().find((i) => i.link === slug);
 
   return (
-    <main
-      className={cn('relative z-[5] border', alfaSlabOne.className, className)}
-    >
+    <main className={cn('relative z-[5] border', alfaSlabOne.className)}>
       <Grid imgPaths={currentPage?.images ?? []} className="" />
       <Description
         title={currentPage?.name as string}
@@ -35,6 +30,4 @@ const PageComponent: React.FC<Props> = async ({ className, params }) => {
       />
     </main>
   );
-};
-
-export default PageComponent;
+}
