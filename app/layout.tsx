@@ -29,7 +29,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          'grid grid-rows-[auto_1fr_auto] h-screen p-8 pb-2 pt-12 bg-[#2d3d51] text-white',
+          'grid grid-rows-[auto_1fr_auto] p-8 pt-12 bg-[#2d3d51] text-white',
         )}
       >
         <header
@@ -46,7 +46,7 @@ export default function RootLayout({
           </p>
         </header>
         {children}
-        <footer
+        {/* <footer
           className={cn(
             rock3D.className,
             'flex gap-10 mt-6 text-2xl relative z-[5]',
@@ -54,7 +54,7 @@ export default function RootLayout({
         >
           <Link href={'/woodhouse'}>WoodHousePage</Link>
           The footer
-        </footer>
+        </footer> */}
       </body>
     </html>
   );

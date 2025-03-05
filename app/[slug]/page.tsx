@@ -22,11 +22,11 @@ export default async function PageComponent({
   const currentPage = objs.flat().find((i) => i.link === slug);
 
   return (
-    <main className={cn('relative z-[5] border', alfaSlabOne.className)}>
+    <main className={cn('relative z-[5]', alfaSlabOne.className)}>
       <Grid imgPaths={currentPage?.images ?? []} className="" />
       <Description
         title={currentPage?.name as string}
-        className="absolute right-0 bottom-0 max-w-[65%] text-right"
+        className="absolute right-0 -top-44 max-w-[45%] text-right"
       />
     </main>
   );
