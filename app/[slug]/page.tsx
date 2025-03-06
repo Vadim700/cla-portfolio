@@ -18,7 +18,6 @@ export default async function PageComponent({
   const { slug } = await params;
 
   const objs = Object.values(dataImages);
-
   const currentPage = objs.flat().find((i) => i.link === slug);
 
   return (

@@ -19,9 +19,9 @@ export default function Home() {
         ' relative z-[5] text-3xl  mb-auto pr-4',
       )}
     >
-      <CartsList title={'Landings'} data={landings} className="mb-10" />
-      <CartsList title={`Multi Page`} data={multiPage} className="mb-10" />
-      <CartsList title={`Mobile Apps`} data={apps} className="mb-10" />
+      <CartsList title={'Landings'} data={landings} className="mb-16" />
+      <CartsList title={`Multi Page`} data={multiPage} className="mb-16" />
+      <CartsList title={`Mobile Apps`} data={apps} className="mb-16" />
       <CartsList title={`Banners`} data={bunners} className="" />
     </main>
   );
