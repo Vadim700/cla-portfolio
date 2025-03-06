@@ -46,15 +46,6 @@ export default function RootLayout({
           </p>
         </header>
         {children}
-        {/* <footer
-          className={cn(
-            rock3D.className,
-            'flex gap-10 mt-6 text-2xl relative z-[5]',
-          )}
-        >
-          <Link href={'/woodhouse'}>WoodHousePage</Link>
-          The footer
-        </footer> */}
       </body>
     </html>
   );

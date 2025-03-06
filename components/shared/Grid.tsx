@@ -12,6 +12,7 @@ export const Grid: React.FC<Props> = ({ className, imgPaths }) => {
     <div
       className={cn('grid grid-flow-col-dense gap-2 justify-center', className)}
     >
+      
       {imgPaths.map((image) => (
         <Image
           className="object-contain max-h-[75vh] cursor-pointer transition-all hover:-translate-y-3 hover:shadow-2xl w-auto"
