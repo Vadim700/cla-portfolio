@@ -2,8 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scrollbar-width: none;
+}
+
 body {
   position: relative;
+  padding: 3rem !important;
 
   &::after {
     content: "";
