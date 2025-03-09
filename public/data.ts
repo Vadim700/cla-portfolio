@@ -7,13 +7,13 @@ export const dataImages = {
       preview: '/images/landings/3DVC/dvc_0.png',
       images: ['/images/landings/3DVC/dvc_1.png'],
     },
-    // {
-    //   id: 2,
-    //   name: 'Cool Job',
-    //   link: 'cooljob',
-    //   preview: '/images/landings/сooljob_home/Cooljob_home_0.png',
-    //   images: ['/images/landings/сooljob_home/Cooljob_home_1.png'],
-    // },
+    {
+      id: 2,
+      name: 'Cool Job',
+      link: 'cooljob',
+      preview: '/images/landings/сooljob_home/Cooljob_home_0.png',
+      images: ['/images/landings/сooljob_home/Cooljob_home_1.png'],
+    },
     {
       id: 3,
       name: 'Alcan',
