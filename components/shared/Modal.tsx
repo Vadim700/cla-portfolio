@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Button } from '@/components/ui/button';
 import {
   Dialog,
@@ -8,7 +9,7 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 import { cn } from '@/lib/utils';
-import Image from 'next/image';
+// import { useRef } from 'react';
 
 export const Modal = ({
   children,
@@ -19,6 +20,10 @@ export const Modal = ({
   className: string;
   innerModal: string;
 }) => {
+  // const imageRef = useRef(<img />);
+
+  // console.log(imageRef.current);
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -26,16 +31,14 @@ export const Modal = ({
           {children}
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]" aria-describedby={undefined}>
+      <DialogContent className="sm:max-w-[60vw]" aria-describedby={undefined}>
         <DialogHeader>
-          <DialogTitle>Modal Title</DialogTitle>
-          <Image
+          <DialogTitle>Detail</DialogTitle>
+          <img
+            // ref={imageRef}
             className="h-auto w-auto"
             src={innerModal}
             alt="image"
-            priority={true}
-            width={200}
-            height={200}
           />
           <DialogDescription></DialogDescription>
         </DialogHeader>
