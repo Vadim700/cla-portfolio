@@ -59,11 +59,8 @@ export const Modal = ({
       </DialogTrigger>
       <DialogContent
         ref={modalRef}
-        className={cn(
-          'sm:max-w-[50vw]',
-          'transition-transform duration-100 ease-out',
-          `transform translateY(${Math.round(translateRef.current)}px)`,
-        )}
+        style={{ top: `-${Math.round(translateRef.current)}px` }}
+        className={cn('sm:max-w-[50vw]')}
         aria-describedby={undefined}
       >
         <DialogHeader>
