@@ -1,6 +1,7 @@
 import { cn } from '@/lib/utils';
 import { X } from 'lucide-react';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
+import { useClickAway, useKey } from 'react-use';
 
 interface Props {
   className?: string;
@@ -9,6 +10,13 @@ interface Props {
 }
 
 export const Modal: React.FC<Props> = ({ className, src, closeModal }) => {
+  const ref = useRef(null);
+  useKey('Escape', () => onclickClose());
+
+  useClickAway(ref, () => {
+    onclickClose();
+  });
+
   const onclickClose = () => {
     closeModal(false);
   };
@@ -21,13 +29,18 @@ export const Modal: React.FC<Props> = ({ className, src, closeModal }) => {
         className,
       )}
     >
-      <button className="fixed z-10 right-5 top-5 hover:text-[#f2c50d]" onClick={onclickClose}>
-        <X size={40}/>
+      <button
+        className="fixed z-10 right-5 top-5 hover:text-[#f2c50d]"
+        onClick={onclickClose}
+      >
+        <X size={40} />
       </button>
       <div
         className={cn('relative p-10 grid place-items-center', 'modal-inner ')}
       >
-        <div className="">{src && <img src={src} alt="Detail image" />}</div>
+        <div className="" ref={ref}>
+          {src && <img src={src} alt="Detail image" />}
+        </div>
       </div>
     </div>
   );
