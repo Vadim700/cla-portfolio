@@ -30,7 +30,7 @@ export const CartItem: React.FC<Props> = ({
 
         'before:absolute before:w-full before:h-full hover:before:bg-[rgba(0,0,0,.65)] after:transition-all before:transition-all',
 
-        `after:absolute after:grid after:place-content-center items-center hover:after:content-[attr(data-content)] after:text-5xl  after:w-full after:h-full text-white before:group-hover:bg-[rgba(0,0,0,0)]`,
+        `after:absolute after:grid after:place-content-center items-center text-center hover:after:content-[attr(data-content)] after:text-5xl  after:w-full after:h-full text-white before:group-hover:bg-[rgba(0,0,0,0)]`,
 
         className,
       )}

@@ -1,49 +1,47 @@
-/* eslint-disable @next/next/no-img-element */
-import { Button } from '@/components/ui/button';
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from '@/components/ui/dialog';
 import { cn } from '@/lib/utils';
-// import { useRef } from 'react';
+import { X } from 'lucide-react';
+import React, { useRef, useState } from 'react';
+import { useClickAway, useKey } from 'react-use';
 
-export const Modal = ({
-  children,
-  className,
-  innerModal,
-}: {
-  children: React.ReactNode;
-  className: string;
-  innerModal: string;
-}) => {
-  // const imageRef = useRef(<img />);
+interface Props {
+  className?: string;
+  src: string;
+  closeModal: (a: boolean) => void;
+}
 
-  // console.log(imageRef.current);
+export const Modal: React.FC<Props> = ({ className, src, closeModal }) => {
+  const ref = useRef(null);
+  useKey('Escape', () => onclickClose());
+
+  useClickAway(ref, () => {
+    onclickClose();
+  });
+
+  const onclickClose = () => {
+    closeModal(false);
+  };
 
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button variant="outline" className={cn('border-0', className)}>
-          {children}
-        </Button>
-      </DialogTrigger>
-      <DialogContent className="sm:max-w-[60vw]" aria-describedby={undefined}>
-        <DialogHeader>
-          <DialogTitle>Detail</DialogTitle>
-          <img
-            // ref={imageRef}
-            className="h-auto w-auto"
-            src={innerModal}
-            alt="image"
-          />
-          <DialogDescription></DialogDescription>
-        </DialogHeader>
-        <DialogTitle></DialogTitle>
-      </DialogContent>
-    </Dialog>
+    <div
+      className={cn(
+        'no-scrollbar',
+        'z-10 absolute w-full h-screen  overflow-auto',
+        className,
+      )}
+    >
+      <button
+        className="fixed z-10 right-5 top-5 hover:text-[#f2c50d]"
+        onClick={onclickClose}
+      >
+        <X size={40} />
+      </button>
+      <div
+        className={cn('relative p-10 grid place-items-center', 'modal-inner ')}
+      >
+        <div className="" ref={ref}>
+          {src && <img src={src} alt="Detail image" />}
+        </div>
+      </div>
+    </div>
   );
 };
