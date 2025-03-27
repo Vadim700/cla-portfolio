@@ -36,7 +36,7 @@ export const Modal: React.FC<Props> = ({ className, src, closeModal }) => {
         <X size={40} />
       </button>
       <div
-        className={cn('relative p-10 grid place-items-center', 'modal-inner ')}
+        className={cn('relative p-10 min-h-full grid place-items-center', 'modal-inner ')}
       >
         <div className="" ref={ref}>
           {src && <img src={src} alt="Detail image" />}

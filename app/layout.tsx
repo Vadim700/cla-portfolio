@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { WindSong, Rock_3D } from 'next/font/google';
+import { WindSong, Rock_3D, Rubik_Iso } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
@@ -19,6 +19,12 @@ export const metadata: Metadata = {
   title: 'Portfolio',
   description: 'web-designer portfolio site',
 };
+
+const rubikIso = Rubik_Iso({
+  style: 'normal',
+  weight: '400',
+  subsets: ['latin', 'latin-ext', 'cyrillic', 'cyrillic-ext', 'hebrew'],
+});
 
 export default function RootLayout({
   children,
@@ -41,7 +47,7 @@ export default function RootLayout({
           <Link href={'/'} className="hover:text-red-800 transition-all">
             Bekmansurova Juliya
           </Link>
-          <p className={cn(rock3D.className, 'self-end text-7xl')}>
+          <p className={cn(rubikIso.className, 'self-end text-7xl')}>
             UI/UX Designer
           </p>
         </header>

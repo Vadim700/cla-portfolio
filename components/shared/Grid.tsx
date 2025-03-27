@@ -2,7 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ModalButton } from './ModalButton';
 import { Modal } from './Modal';
 import { createPortal } from 'react-dom';
@@ -15,6 +15,7 @@ interface Props {
 export const Grid: React.FC<Props> = ({ className, imgPaths }) => {
   const [imageModal, setImgaeModal] = useState('');
   const [isModal, setIsModal] = useState(false);
+  const [singleImage, setSingleImage] = useState(false);
 
   const initModal = (image: string) => {
     setIsModal(true);
@@ -24,6 +25,10 @@ export const Grid: React.FC<Props> = ({ className, imgPaths }) => {
   const onClose = () => {
     setIsModal(false);
   };
+
+  useEffect(() => {
+    imgPaths.length > 1 ? setSingleImage(false) : setSingleImage(true);
+  }, []);
 
   return (
     <div
@@ -37,7 +42,8 @@ export const Grid: React.FC<Props> = ({ className, imgPaths }) => {
         >
           <Image
             className={cn(
-              'object-contain max-h-[70vh] cursor-pointer transition-all hover:-translate-y-1 hover:shadow-2xl w-auto group-hover:-translate-y-1',
+              'object-contain cursor-pointer transition-all hover:-translate-y-1 hover:shadow-2xl w-auto group-hover:-translate-y-1',
+              singleImage ? 'h-[70vh]' : 'max-h-[70vh]',
             )}
             onClick={() => initModal(image)}
             src={image}

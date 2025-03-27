@@ -4,6 +4,8 @@ export const dataImages = {
       id: 1,
       name: 'Dvc',
       link: 'dvc',
+      description:
+        'Современный, интуитивный интерфейс, необычная визуализации, удобная навигация, информация о спикерах и расписании.',
       preview: '/images/landings/3DVC/dvc_0.png',
       images: ['/images/landings/3DVC/dvc_1.png'],
     },
@@ -11,6 +13,8 @@ export const dataImages = {
       id: 2,
       name: 'Cool Job',
       link: 'cooljob',
+      description:
+        'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum quibusdam numquam recusandae corrupti enim veritatis, vel ab adipisci rerum facere.',
       preview: '/images/landings/сooljob_home/Cooljob_home_0.png',
       images: ['/images/landings/сooljob_home/Cooljob_home_1.png'],
     },
@@ -18,6 +22,8 @@ export const dataImages = {
       id: 3,
       name: 'Alcan',
       link: 'alcan',
+      description:
+        'Создание адаптивного макета сайта с использованием медиа-запросов CSS, гибкой сетки и масштабируемых изображений для оптимального отображения на разных устройствах.',
       preview: '/images/landings/Alcan/Alcan_0.png',
       images: [
         '/images/landings/Alcan/Alcan_1.png',
@@ -30,6 +36,8 @@ export const dataImages = {
       id: 4,
       name: 'Dances',
       link: 'dances',
+      description:
+        'Сайт по танцам предлагает уроки, видеоуроки, статьи и советы для танцоров всех уровней. Удобный интерфейс и разнообразие стилей!',
       preview: '/images/landings/dances/dens_0.png',
       images: ['/images/landings/dances/dens_1.png'],
     },
@@ -37,6 +45,8 @@ export const dataImages = {
       id: 6,
       name: 'Vershina',
       link: 'vershina',
+      description:
+        'Природный парк Ергаки — живописное место в Сибири с уникальными ландшафтами, горами, озерами и разнообразной флорой и фауной.',
       preview: '/images/landings/vershina/vershina_0.png',
       images: ['/images/landings/vershina/vershina_1.png'],
     },
@@ -44,6 +54,8 @@ export const dataImages = {
       id: 61,
       name: 'Porolosh',
       link: 'porolosh',
+      description:
+        'Сайт предлагает широкий ассортимент рыбных снастей: удочки, катушки, приманки и аксессуары. Удобная навигация и полезные советы для рыбаков, фото и видео улова.',
       preview: '/cla_images/Poroloshka/Poroloshka_0.jpg',
       images: [
         '/cla_images/Poroloshka/Poroloshka_1.jpg',
@@ -56,6 +68,8 @@ export const dataImages = {
       id: 7,
       name: 'Woodhouse',
       link: 'woodhouse',
+      description:
+        'Сайт предлагает уникальные интерьеры из дерева, сочетая экологичность и стиль. Вдохновение для уютного и современного дизайна вашего дома.',
       preview: '/images/multypage/woodhouse/woodhouse_0.png',
       images: [
         '/images/multypage/woodhouse/woodhouse_1.png',
@@ -73,6 +87,8 @@ export const dataImages = {
       id: 8,
       name: 'Burmash',
       link: 'burmash',
+      description:
+        'Сайт предлагает широкий ассортимент шнеков, включая характеристики, применение и технические детали для различных отраслей.',
       preview: '/cla_images/burmash_main/burmash_0.png',
       images: [
         '/cla_images/burmash_main/burmash_1.png',
@@ -92,6 +108,8 @@ export const dataImages = {
       id: 9,
       name: 'Sota',
       link: 'sota',
+      description:
+        'Сайт предлагает широкий выбор теплиц и садовых домов, предоставляет полезные советы по их строительству, выбору материалов и уходу, а также вдохновляющие идеи для вашего сада.',
       preview: '/cla_images/Sota/Sota_0.png',
       images: [
         '/cla_images/Sota/sota_1.png',
@@ -120,6 +138,8 @@ export const dataImages = {
       id: 10,
       name: 'SPK Group',
       link: 'spkgroup',
+      description:
+        'Многостраничный сайт завода по производству дробеструйных камер.',
       preview: '/cla_images/SPB_site/СПБ_0.png',
       images: [
         '/cla_images/SPB_site/СПБ_1.png',
@@ -142,6 +162,8 @@ export const dataImages = {
       id: 11,
       name: 'Suventr Avenew',
       link: 'suvenir',
+      description:
+        'Интуитивно понятный интерфейс, широкий ассортимент товаров, удобная навигация, безопасные способы оплаты и быстрая доставка.',
       preview: '/cla_images/Suvenir/Suvenir_0.png',
       images: [
         '/cla_images/Suvenir/suvenir_1.png',
@@ -165,6 +187,8 @@ export const dataImages = {
       id: 15,
       name: 'Bank App',
       link: 'bankapp',
+      description:
+        'Приложение для учета расходов: интуитивный интерфейс, возможность управления бюджетом, аналитика по категориям, напоминания о платежах.',
       preview: '/images/applications/modil_0.png',
       images: [
         '/images/applications/modil_0_1.png',
@@ -182,6 +206,8 @@ export const dataImages = {
       id: 21,
       name: 'Edu',
       link: 'edu',
+      description:
+        'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum quibusdam numquam recusandae corrupti enim veritatis, vel ab adipisci rerum facere.',
       preview: '/images/banner/Edu/Edu_0.png',
       images: ['/images/banner/Edu/Edu_0.png'],
     },
@@ -189,6 +215,8 @@ export const dataImages = {
       id: 22,
       name: 'Flowers',
       link: 'flowers',
+      description:
+        'Элегантные букеты и уникальные композиции: цветы для особых моментов вашей жизни.',
       preview: '/images/banner/Flowers/flowers_0.png',
       images: [
         '/images/banner/Flowers/flowers_0.png',
