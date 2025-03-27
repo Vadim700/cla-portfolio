@@ -2,7 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ModalButton } from './ModalButton';
 import { Modal } from './Modal';
 import { createPortal } from 'react-dom';
@@ -15,6 +15,7 @@ interface Props {
 export const Grid: React.FC<Props> = ({ className, imgPaths }) => {
   const [imageModal, setImgaeModal] = useState('');
   const [isModal, setIsModal] = useState(false);
+  const [singleImage, setSingleImage] = useState(false);
 
   const initModal = (image: string) => {
     setIsModal(true);
@@ -25,6 +26,10 @@ export const Grid: React.FC<Props> = ({ className, imgPaths }) => {
     setIsModal(false);
   };
 
+  useEffect(() => {
+    imgPaths.length > 1 ? setSingleImage(false) : setSingleImage(true);
+  }, []);
+
   return (
     <div
       className={cn('grid grid-flow-col-dense gap-2 justify-center', className)}
@@ -32,12 +37,13 @@ export const Grid: React.FC<Props> = ({ className, imgPaths }) => {
       {imgPaths.map((image) => (
         <ModalButton
           key={image}
-          className="h-[70vh] p-0 flex items-start group shadow-none"
+          className="h-[75vh] p-0 flex items-start group shadow-none"
           innerModal={imageModal}
         >
           <Image
             className={cn(
-              'object-contain max-h-[70vh] cursor-pointer transition-all hover:-translate-y-1 hover:shadow-2xl w-auto group-hover:-translate-y-1',
+              'object-contain cursor-pointer transition-all hover:-translate-y-1 hover:shadow-2xl w-auto group-hover:-translate-y-1',
+              singleImage ? 'h-[75vh]' : 'max-h-[75vh]',
             )}
             onClick={() => initModal(image)}
             src={image}

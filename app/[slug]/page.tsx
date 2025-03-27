@@ -25,7 +25,8 @@ export default async function PageComponent({
       <Grid imgPaths={currentPage?.images ?? []} className="" />
       <Description
         title={currentPage?.name as string}
-        className="absolute right-0 -top-44 max-w-[45%] text-right"
+        description={currentPage?.description}
+        className="absolute right-0 -top-48 max-w-[65%] text-right"
       />
     </main>
   );
