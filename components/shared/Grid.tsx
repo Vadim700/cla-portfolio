@@ -37,13 +37,13 @@ export const Grid: React.FC<Props> = ({ className, imgPaths }) => {
       {imgPaths.map((image) => (
         <ModalButton
           key={image}
-          className="h-[70vh] p-0 flex items-start group shadow-none"
+          className="h-[75vh] p-0 flex items-start group shadow-none"
           innerModal={imageModal}
         >
           <Image
             className={cn(
               'object-contain cursor-pointer transition-all hover:-translate-y-1 hover:shadow-2xl w-auto group-hover:-translate-y-1',
-              singleImage ? 'h-[70vh]' : 'max-h-[70vh]',
+              singleImage ? 'h-[75vh]' : 'max-h-[75vh]',
             )}
             onClick={() => initModal(image)}
             src={image}

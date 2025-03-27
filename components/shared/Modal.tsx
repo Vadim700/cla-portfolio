@@ -25,7 +25,7 @@ export const Modal: React.FC<Props> = ({ className, src, closeModal }) => {
     <div
       className={cn(
         'no-scrollbar',
-        'z-10 absolute w-full h-screen  overflow-auto',
+        'z-10 absolute w-full h-[101vh]  overflow-auto',
         className,
       )}
     >
