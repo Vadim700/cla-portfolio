@@ -136,11 +136,22 @@ header {
   direction: rtl;
 }
 
-main, .no-scrollbar {
+main,
+.no-scrollbar {
   scrollbar-width: none;
 }
 
-.modal-inner{
-  background: rgba(0, 0, 0, 0.79);
+.modal-inner {
+
   backdrop-filter: blur(15px);
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.79);
+  }
 }

@@ -57,7 +57,7 @@ export const Grid: React.FC<Props> = ({ className, imgPaths }) => {
       ))}
       {isModal &&
         createPortal(
-          <Modal src={imageModal} closeModal={onClose} />,
+          <Modal src={imageModal} closeModal={onClose} images={imgPaths} />,
           document.body,
         )}
     </div>

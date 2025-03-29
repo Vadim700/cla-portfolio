@@ -1,21 +1,22 @@
 import { cn } from '@/lib/utils';
-import { X } from 'lucide-react';
-import React, { useRef, useState } from 'react';
-import { useClickAway, useKey } from 'react-use';
+import React from 'react';
+import { useKey } from 'react-use';
+import { Slider } from './Slider';
 
 interface Props {
   className?: string;
   src: string;
+  images: string[];
   closeModal: (a: boolean) => void;
 }
 
-export const Modal: React.FC<Props> = ({ className, src, closeModal }) => {
-  const ref = useRef(null);
+export const Modal: React.FC<Props> = ({
+  className,
+  src,
+  closeModal,
+  images,
+}) => {
   useKey('Escape', () => onclickClose());
-
-  useClickAway(ref, () => {
-    onclickClose();
-  });
 
   const onclickClose = () => {
     closeModal(false);
@@ -25,21 +26,13 @@ export const Modal: React.FC<Props> = ({ className, src, closeModal }) => {
     <div
       className={cn(
         'no-scrollbar',
-        'z-10 absolute w-full h-[101vh]  overflow-auto',
+        'z-10 absolute w-full h-full  overflow-auto',
         className,
       )}
     >
-      <button
-        className="fixed z-10 right-5 top-5 hover:text-[#f2c50d]"
-        onClick={onclickClose}
-      >
-        <X size={40} />
-      </button>
-      <div
-        className={cn('relative p-10 min-h-full grid place-items-center', 'modal-inner ')}
-      >
-        <div className="" ref={ref}>
-          {src && <img src={src} alt="Detail image" />}
+      <div className={cn('relative min-h-full grid place-items-center')}>
+        <div className="w-full">
+          <Slider images={images} selectedImage={0} closeModal={onclickClose} />
         </div>
       </div>
     </div>
