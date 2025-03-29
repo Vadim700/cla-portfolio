@@ -15,7 +15,7 @@ interface Props {
 export const Grid: React.FC<Props> = ({ className, imgPaths }) => {
   const [imageModal, setImgaeModal] = useState('');
   const [isModal, setIsModal] = useState(false);
-  const [singleImage, setSingleImage] = useState(false);
+  const [isSingleImage, setIsSingleImage] = useState(false);
 
   const initModal = (image: string) => {
     setIsModal(true);
@@ -27,7 +27,7 @@ export const Grid: React.FC<Props> = ({ className, imgPaths }) => {
   };
 
   useEffect(() => {
-    imgPaths.length > 1 ? setSingleImage(false) : setSingleImage(true);
+    imgPaths.length > 1 ? setIsSingleImage(false) : setIsSingleImage(true);
   }, []);
 
   return (
@@ -43,7 +43,7 @@ export const Grid: React.FC<Props> = ({ className, imgPaths }) => {
           <Image
             className={cn(
               'object-contain cursor-pointer transition-all hover:-translate-y-1 hover:shadow-2xl w-auto group-hover:-translate-y-1',
-              singleImage ? 'h-[75vh]' : 'max-h-[75vh]',
+              isSingleImage ? 'h-[75vh]' : 'max-h-[75vh]',
             )}
             onClick={() => initModal(image)}
             src={image}
