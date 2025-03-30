@@ -3,6 +3,7 @@ import { WindSong, Rock_3D, Rubik_Iso, Rubik_Dirt } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
+import { House } from 'lucide-react';
 
 const windSong = WindSong({
   weight: ['500'],
@@ -35,7 +36,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          'grid grid-rows-[auto_1fr_auto] p-8 pt-12 bg-[#2d3d51] text-white',
+          'grid grid-rows-[auto_1fr_auto] p-8 pt-12 bg-[#2d3d51] text-white max-[478px]:justify-center',
         )}
       >
         <header
@@ -44,10 +45,13 @@ export default function RootLayout({
             ' text-6xl/[1.2] mb-10 relative z-[5]',
           )}
         >
-          <Link href={'/'} className="hover:text-red-800 transition-all text-4xl">
-            Bekmansurova Juliya
-          </Link>
-          <p className={cn(rubikDirt.className, 'self-end text-7xl')}>
+          <div className="flex items-center gap-8 mb-2">
+            <Link href={'/'} className="hover:text-red-800 transition-all text-4xl">
+              <House size={50}/>
+            </Link>
+            <p className=" text-[2.5rem]">Bekmansurova Juliya</p>
+          </div>
+          <p className={cn(rubikDirt.className, 'self-end text-7xl max-[478px]:text-5xl max-[478px]:text-center')}>
             UI/UX Designer
           </p>
         </header>

@@ -4,6 +4,7 @@
 
 html {
   scrollbar-width: none;
+  font-size: calc(10px + (16 - 10) * ((100vw - 320px) / (1920 - 320)));
 }
 
 body {
@@ -50,6 +51,33 @@ header {
     background-color: #ea4c3d;
     transform: translate(48vh, -58vh) rotate(30deg);
     box-shadow: 15px 0 53px 1px #000;
+  }
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+  direction: rtl;
+}
+
+main,
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.modal-inner {
+
+  backdrop-filter: blur(15px);
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.79);
   }
 }
 
@@ -126,32 +154,5 @@ header {
 
   body {
     @apply bg-background text-foreground;
-  }
-}
-
-.list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 20px;
-  direction: rtl;
-}
-
-main,
-.no-scrollbar {
-  scrollbar-width: none;
-}
-
-.modal-inner {
-
-  backdrop-filter: blur(15px);
-
-  &::before {
-    content: '';
-    position: absolute;
-    width: 100vw;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background: rgba(0, 0, 0, 0.79);
   }
 }
