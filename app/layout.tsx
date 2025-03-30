@@ -36,13 +36,16 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          'grid grid-rows-[auto_1fr_auto] p-8 pt-12 bg-[#2d3d51] text-white max-[478px]:justify-center',
+          'grid grid-rows-[auto_1fr_auto] p-8 pt-12 bg-[#2d3d51] text-white',
+          'max-[478px]:justify-center',
+          'max-sm:p-0'
         )}
       >
         <header
           className={cn(
             windSong.className,
-            ' text-6xl/[1.2] mb-10 relative z-[5]',
+            'text-6xl/[1.2] mb-10 relative z-[5]',
+            'max-2xl:flex max-2xl:justify-between max-lg:flex-wrap'
           )}
         >
           <div className="flex items-center gap-8 mb-2">
