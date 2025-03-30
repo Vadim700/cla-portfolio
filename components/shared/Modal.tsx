@@ -22,6 +22,8 @@ export const Modal: React.FC<Props> = ({
     closeModal(false);
   };
 
+  const startIndex = images.findIndex((i) => i === src);
+
   return (
     <div
       className={cn(
@@ -32,7 +34,11 @@ export const Modal: React.FC<Props> = ({
     >
       <div className={cn('relative min-h-full grid place-items-center')}>
         <div className="w-full">
-          <Slider images={images} selectedImage={0} closeModal={onclickClose} />
+          <Slider
+            images={images}
+            selectedImage={startIndex}
+            closeModal={onclickClose}
+          />
         </div>
       </div>
     </div>
