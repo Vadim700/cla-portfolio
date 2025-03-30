@@ -26,12 +26,9 @@ export const CartItem: React.FC<Props> = ({
       data-content={name}
       id={id}
       className={cn(
-        'relative flex items-center justify-center aspect-[16/9]  rounded-[8px] backdrop-blur-lg transition-all overflow-hidden hover:scale-[1.01] shadow-2xl',
-
+        'relative flex items-center justify-center aspect-[16/9]  rounded-[8px] backdrop-blur-lg transition-all overflow-hidden hover:scale-[1.01] max-md:hover:scale-1 shadow-2xl',
         'before:absolute before:w-full before:h-full hover:before:bg-[rgba(0,0,0,.65)] after:transition-all before:transition-all',
-
         `after:absolute after:grid after:place-content-center items-center text-center hover:after:content-[attr(data-content)] after:text-5xl  after:w-full after:h-full text-white before:group-hover:bg-[rgba(0,0,0,0)]`,
-
         className,
       )}
     >

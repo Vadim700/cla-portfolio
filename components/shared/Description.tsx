@@ -21,8 +21,8 @@ export const Description: React.FC<Props> = ({
 }) => {
   return (
     <div className={cn('', className)}>
-      <h1 className={cn('text-5xl mb-3', rubikDirt.className)}>{title}</h1>
-      <span className={cn('text-3xl', rubikDirt.className)}>
+      <h1 className={cn('text-5xl mb-3 relative z-10 max-md:text-4xl', rubikDirt.className)}>{title}</h1>
+      <span className={cn('text-3xl relative z-10 max-md:text-xl', rubikDirt.className)}>
         {' '}
         {description}
       </span>

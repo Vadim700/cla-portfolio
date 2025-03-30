@@ -26,7 +26,11 @@ export default async function PageComponent({
       <Description
         title={currentPage?.name as string}
         description={currentPage?.description}
-        className="absolute right-0 -top-48 max-w-[65%] text-right"
+        className={cn(
+          'absolute right-0 -top-48 text-right max-w-[65%]',
+          'max-2xl:top-[auto] max-2xl:-bottom-8 max-2xl:p-8 dark-blur',
+          'max-md:max-w-full max-md:relative ',
+        )}
       />
     </main>
   );
