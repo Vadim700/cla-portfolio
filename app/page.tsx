@@ -16,7 +16,7 @@ export default function Home() {
     <main
       className={cn(
         alfaSlabOne.className,
-        ' relative z-[5] text-3xl  mb-auto pr-4',
+        ' relative z-[5] text-3xl  mb-auto pr-4 max-[478px]:pr-0 ',
       )}
     >
       <CartsList title={'Landings'} data={landings} className="mb-16" />
