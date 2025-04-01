@@ -33,7 +33,7 @@ export const Modal: React.FC<Props> = ({
       )}
     >
       <div className={cn('relative min-h-full grid place-items-center')}>
-        <div className="w-full">
+        <div className="w-full max-md:h-full">
           <Slider
             images={images}
             selectedImage={startIndex}

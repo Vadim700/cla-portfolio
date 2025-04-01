@@ -29,7 +29,7 @@ export default async function PageComponent({
         className={cn(
           'absolute right-0 -top-48 text-right max-w-[65%]',
           'max-2xl:top-[auto] max-2xl:-bottom-8 max-2xl:p-8 dark-blur',
-          'max-md:max-w-full max-md:relative ',
+          'max-md:max-w-full max-md:relative text-left',
         )}
       />
     </main>

@@ -16,6 +16,7 @@ export const Grid: React.FC<Props> = ({ className, imgPaths }) => {
   const [imageModal, setImgaeModal] = useState('');
   const [isModal, setIsModal] = useState(false);
   const [isSingleImage, setIsSingleImage] = useState(false);
+  const [isMultiPage, setIsMultiPage] = useState(false);
 
   const initModal = (image: string) => {
     setIsModal(true);
@@ -28,16 +29,26 @@ export const Grid: React.FC<Props> = ({ className, imgPaths }) => {
 
   useEffect(() => {
     imgPaths.length > 1 ? setIsSingleImage(false) : setIsSingleImage(true);
+    imgPaths.length > 4 ? setIsMultiPage(false) : setIsMultiPage(true);
   }, []);
 
   return (
     <div
-      className={cn('grid grid-flow-col-dense gap-2 justify-center', className)}
+      className={cn(
+        'grid grid-flow-col-dense gap-2 justify-center',
+        !isMultiPage
+          ? 'max-md:flex max-md:flex-wrap max-md:w-full max-md:justify-between'
+          : '',
+        className,
+      )}
     >
       {imgPaths.map((image) => (
         <ModalButton
           key={image}
-          className="h-[75vh] p-0 flex items-start group shadow-none"
+          className={cn(
+            'h-[75vh] p-0 flex items-start group shadow-none',
+            !isMultiPage ? 'max-md:max-w-[30%] max-md:h-auto' : '',
+          )}
           innerModal={imageModal}
         >
           <Image
