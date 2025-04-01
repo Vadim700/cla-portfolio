@@ -110,7 +110,7 @@ export const dataImages = {
       link: 'sota',
       description:
         'Сайт предлагает широкий выбор теплиц и садовых домов, предоставляет полезные советы по их строительству, выбору материалов и уходу, а также вдохновляющие идеи для вашего сада.',
-      preview: '/cla_images/Sota/Sota_0.png',
+      preview: '/cla_images/Sota/sota_0.png',
       images: [
         '/cla_images/Sota/sota_1.png',
         '/cla_images/Sota/sota_1_1.png',
