@@ -38,7 +38,7 @@ export const Slider: React.FC<Props> = ({
 
   return (
     <Carousel
-      className={cn('z-10 grid ', className)}
+      className={cn('z-10 grid max-md:h-full', className)}
       opts={{
         align: 'center',
         startIndex: selectedImage,
@@ -60,8 +60,14 @@ export const Slider: React.FC<Props> = ({
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious ref={prevRef} className="left-5 fixed top-[50%]" />
-      <CarouselNext ref={nextRef} className="right-5 fixed top-[50%]" />
+      <CarouselPrevious
+        ref={prevRef}
+        className="left-5 fixed top-[50%] text-red-500"
+      />
+      <CarouselNext
+        ref={nextRef}
+        className="right-5 fixed top-[50%] text-red-500"
+      />
     </Carousel>
   );
 };
