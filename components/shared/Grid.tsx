@@ -36,9 +36,7 @@ export const Grid: React.FC<Props> = ({ className, imgPaths }) => {
     <div
       className={cn(
         'grid grid-flow-col-dense gap-2 justify-center',
-        !isMultiPage
-          ? 'max-md:flex max-md:flex-wrap max-md:w-full max-md:justify-between'
-          : '',
+        !isMultiPage ? 'max-md:flex max-md:flex-wrap max-md:w-full max-md:justify-between' : '',
         className,
       )}
     >
