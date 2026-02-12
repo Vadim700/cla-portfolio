@@ -10,11 +10,7 @@ const alfaSlabOne = Alfa_Slab_One({
   subsets: ['latin', 'latin-ext', 'vietnamese'],
 });
 
-export default async function PageComponent({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export default async function PageComponent({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
 
   const objs = Object.values(dataImages);
@@ -23,7 +19,7 @@ export default async function PageComponent({
   return (
     <main className={cn('relative z-[5]', alfaSlabOne.className)}>
       <Grid imgPaths={currentPage?.images ?? []} className="" />
-      <Description
+      {/* <Description
         title={currentPage?.name as string}
         description={currentPage?.description}
         className={cn(
@@ -31,7 +27,7 @@ export default async function PageComponent({
           'max-2xl:top-[auto] max-2xl:-bottom-8 max-2xl:p-8 dark-blur',
           'max-md:max-w-full max-md:relative text-left',
         )}
-      />
+      /> */}
     </main>
   );
 }
