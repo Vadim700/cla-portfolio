@@ -193,7 +193,7 @@ export const projectSections: ProjectSection[] = [
       },
       {
         id: 11,
-        name: 'Suventr Avenew',
+        name: 'Suvenir Avenue',
         link: 'suvenir',
         description: 'Интуитивно понятный интерфейс, широкий ассортимент товаров, удобная навигация, безопасные способы оплаты и быстрая доставка.',
         cover: '/projects/suvenir/cover.webp',
