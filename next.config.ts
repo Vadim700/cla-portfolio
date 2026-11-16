@@ -1,12 +1,9 @@
-module.exports = {
+import type { NextConfig } from 'next';
+
+const nextConfig: NextConfig = {
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'storage.yandexcloud.net',
-        port: '',
-        pathname: '/rt-pepper/cla-porfolio/**',
-      },
-    ],
+    formats: ['image/avif', 'image/webp'],
   },
 };
+
+export default nextConfig;

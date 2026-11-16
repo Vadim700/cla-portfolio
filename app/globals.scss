@@ -115,7 +115,8 @@ main,
 @layer base {
   :root {
     --background: #ffffff;
-    --foreground: #1b1d3a --card: #ffffff;
+    --foreground: #1b1d3a;
+    --card: #ffffff;
     --card-foreground: #1b1d3a;
     --popover: #ffffff;
     --popover-foreground: #1b1d3a;
@@ -162,16 +163,6 @@ main,
     --chart-3: #ffbf00;
     --chart-4: #a06d9e;
     --chart-5: #d7006b;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
   }
 }
 

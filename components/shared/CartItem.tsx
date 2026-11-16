@@ -2,43 +2,37 @@
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useId } from 'react';
+import React from 'react';
 
 interface Props {
   className?: string;
-  id: number;
   name: string;
-  preview: string;
+  cover: string;
   link: string;
+  priority?: boolean;
 }
 
-export const CartItem: React.FC<Props> = ({
-  className,
-  name,
-  preview,
-  link,
-}) => {
-  const id = useId();
-
+export const CartItem: React.FC<Props> = ({ className, name, cover, link, priority }) => {
   return (
     <Link
       href={`/${link}`}
       data-content={name}
-      id={id}
+      aria-label={`Открыть проект ${name}`}
       className={cn(
-        'relative flex items-center justify-center aspect-[16/9]  rounded-[8px] backdrop-blur-lg transition-all overflow-hidden hover:scale-[1.01] max-md:hover:scale-1 shadow-2xl',
-        'before:absolute before:w-full before:h-full hover:before:bg-[rgba(0,0,0,.65)] after:transition-all before:transition-all',
-        `after:absolute after:grid after:place-content-center items-center text-center hover:after:content-[attr(data-content)] after:text-5xl  after:w-full after:h-full text-white before:group-hover:bg-[rgba(0,0,0,0)]`,
+        'group relative flex items-center justify-center aspect-[16/9] rounded-[8px] backdrop-blur-lg transition-transform overflow-hidden hover:scale-[1.01] shadow-2xl',
+        'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white',
+        'before:absolute before:inset-0 before:z-10 before:bg-black/0 before:transition-colors before:content-[""] hover:before:bg-black/65',
+        'after:absolute after:inset-0 after:z-20 after:grid after:place-content-center after:px-4 after:text-center after:text-5xl after:leading-tight after:text-white after:opacity-0 after:transition-opacity after:content-[attr(data-content)] hover:after:opacity-100',
         className,
       )}
     >
       <Image
-        src={preview}
-        className="object-cover w-full h-full"
-        alt="Image"
-        width={350}
-        height={250}
-        priority={true}
+        src={cover}
+        alt={name}
+        fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 45vw, 420px"
+        priority={priority}
+        className="object-cover"
       />
     </Link>
   );

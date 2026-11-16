@@ -1,74 +1,70 @@
 'use client';
 
 import { cn } from '@/lib/utils';
+import type { ProjectImage } from '@/lib/projects';
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
-import { ModalButton } from './ModalButton';
+import React, { useState } from 'react';
 import { Modal } from './Modal';
-import { createPortal } from 'react-dom';
 
 interface Props {
   className?: string;
-  imgPaths: string[];
+  images: ProjectImage[];
+  /** Project name, used for alt text and the lightbox caption. */
+  title: string;
 }
 
-export const Grid: React.FC<Props> = ({ className, imgPaths }) => {
-  const [imageModal, setImgaeModal] = useState('');
-  const [isModal, setIsModal] = useState(false);
-  const [isSingleImage, setIsSingleImage] = useState(false);
-  const [isMultiPage, setIsMultiPage] = useState(false);
+export const Grid: React.FC<Props> = ({ className, images, title }) => {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  const initModal = (image: string) => {
-    setIsModal(true);
-    setImgaeModal(image);
-  };
-
-  const onClose = () => {
-    setIsModal(false);
-  };
-
-  useEffect(() => {
-    imgPaths.length > 1 ? setIsSingleImage(false) : setIsSingleImage(true);
-    imgPaths.length > 4 ? setIsMultiPage(false) : setIsMultiPage(true);
-  }, []);
+  if (images.length === 0) {
+    return (
+      <p className={cn('font-sans text-lg text-white/70', className)}>
+        Изображения для этого проекта скоро появятся.
+      </p>
+    );
+  }
 
   return (
-    <div
-      className={cn(
-        'grid grid-flow-col-dense gap-2 justify-center',
-        !isMultiPage ? 'max-md:flex max-md:flex-wrap max-md:w-full max-md:justify-between' : '',
-        className,
+    <>
+      <ul className={cn('grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3', className)}>
+        {images.map((image, index) => (
+          <li key={image.thumb}>
+            <button
+              type="button"
+              onClick={() => setActiveIndex(index)}
+              aria-label={`Открыть изображение ${index + 1} из ${images.length} — ${title}`}
+              className={cn(
+                'group relative block aspect-[4/3] w-full overflow-hidden rounded-lg bg-white/5 shadow-xl transition-transform',
+                'hover:scale-[1.01] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white',
+              )}
+            >
+              <Image
+                src={image.thumb}
+                alt={`${title} — изображение ${index + 1}`}
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                loading="lazy"
+                className="object-cover object-top"
+              />
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 grid place-items-center bg-black/0 text-xl text-white opacity-0 transition-opacity group-hover:bg-black/40 group-hover:opacity-100"
+              >
+                Открыть
+              </span>
+            </button>
+          </li>
+        ))}
+      </ul>
+      {activeIndex !== null && (
+        <Modal
+          images={images}
+          title={title}
+          index={activeIndex}
+          onIndexChange={setActiveIndex}
+          onClose={() => setActiveIndex(null)}
+        />
       )}
-    >
-      {imgPaths.map((image) => (
-        <ModalButton
-          key={image}
-          className={cn(
-            'h-[75vh] p-0 flex items-start group shadow-none',
-            !isMultiPage ? 'max-md:max-w-[30%] max-md:h-auto' : '',
-          )}
-          innerModal={imageModal}
-        >
-          <Image
-            className={cn(
-              'object-contain cursor-pointer transition-all hover:-translate-y-1 hover:shadow-2xl w-auto group-hover:-translate-y-1',
-              isSingleImage ? 'h-[75vh]' : 'max-h-[75vh]',
-            )}
-            onClick={() => initModal(image)}
-            src={image}
-            key={image}
-            alt="image"
-            priority={true}
-            width={200}
-            height={200}
-          />
-        </ModalButton>
-      ))}
-      {isModal &&
-        createPortal(
-          <Modal src={imageModal} closeModal={onClose} images={imgPaths} />,
-          document.body,
-        )}
-    </div>
+    </>
   );
 };

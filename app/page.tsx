@@ -1,9 +1,7 @@
 import { CartsList } from '@/components/shared/CartsList';
 import { cn } from '@/lib/utils';
-import { dataImages } from '@/public/data';
+import { projectSections } from '@/lib/projects';
 import { Alfa_Slab_One } from 'next/font/google';
-
-const { landings, multiPage, apps, bunners } = dataImages;
 
 const alfaSlabOne = Alfa_Slab_One({
   style: 'normal',
@@ -16,13 +14,18 @@ export default function Home() {
     <main
       className={cn(
         alfaSlabOne.className,
-        ' relative z-[5] text-3xl  mb-auto pr-4 max-[478px]:pr-0 ',
+        'relative z-[5] text-3xl mb-auto pr-4 max-[478px]:pr-0',
       )}
     >
-      <CartsList title={'Landings'} data={landings} className="mb-16" />
-      <CartsList title={`Multi Page`} data={multiPage} className="mb-16" />
-      <CartsList title={`Mobile Apps`} data={apps} className="mb-16" />
-      <CartsList title={`Banners`} data={bunners} className="" />
+      {projectSections.map((section, index) => (
+        <CartsList
+          key={section.key}
+          title={section.title}
+          projects={section.projects}
+          prioritize={index === 0}
+          className={index === projectSections.length - 1 ? '' : 'mb-16'}
+        />
+      ))}
     </main>
   );
 }

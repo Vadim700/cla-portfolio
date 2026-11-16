@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { WindSong, Rock_3D, Rubik_Dirt } from 'next/font/google';
+import { WindSong, Rubik_Dirt } from 'next/font/google';
 import './globals.scss';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
@@ -10,22 +10,36 @@ const windSong = WindSong({
   subsets: ['latin', 'latin-ext', 'vietnamese'],
 });
 
-const rock3D = Rock_3D({
-  weight: '400',
-  style: 'normal',
-  subsets: ['latin'],
-});
-
-export const metadata: Metadata = {
-  title: 'Portfolio',
-  description: 'web-designer portfolio site',
-};
-
 const rubikDirt = Rubik_Dirt({
   style: 'normal',
   weight: '400',
   subsets: ['latin', 'latin-ext', 'cyrillic', 'cyrillic-ext', 'hebrew'],
 });
+
+const description =
+  'Портфолио UI/UX дизайнера: лендинги, многостраничные сайты, мобильные приложения и баннеры.';
+
+export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
+  title: {
+    default: 'Bekmansurova Juliya — UI/UX дизайнер',
+    template: '%s — Bekmansurova Juliya',
+  },
+  description,
+  openGraph: {
+    type: 'website',
+    locale: 'ru_RU',
+    siteName: 'Bekmansurova Juliya',
+    url: '/',
+    title: 'Bekmansurova Juliya — UI/UX дизайнер',
+    description,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Bekmansurova Juliya — UI/UX дизайнер',
+    description,
+  },
+};
 
 export default function RootLayout({
   children,
@@ -33,7 +47,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ru">
       <body
         className={cn(
           'grid grid-rows-[auto_1fr_auto] p-8 pt-12 bg-[#2d3d51] text-white',
@@ -51,6 +65,7 @@ export default function RootLayout({
           <div className="flex items-center gap-8 mb-2">
             <Link
               href={'/'}
+              aria-label="На главную"
               className="hover:text-red-800 transition-all text-4xl"
             >
               <House size={50} />
